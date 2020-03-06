@@ -21,6 +21,8 @@ public class UserSrvImpl implements UserSrv {
     @Override
     public UserModel queryUserById(Integer id) {
         User user= userMapper.selectByPrimaryKey(id);
+        if (null == user)
+            return null;
         UserPassword userPassword = userPasswordMapper.selectByUserId(id);
         return convertFromDataObject(user,userPassword);
     }
