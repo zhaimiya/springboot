@@ -6,6 +6,7 @@
         <module>web</module>
         <module>data-object</module>
         <module>dao</module>
+        <module>service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

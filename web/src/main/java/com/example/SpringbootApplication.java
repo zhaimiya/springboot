@@ -1,16 +1,13 @@
 package com.example;
 
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class,
-        scanBasePackages = {"com.example"})
-@MapperScan(value = {"com.example.dao"})
+@SpringBootApplication(scanBasePackages = {"com.example.mapper","com.example.controller","com.example.srv"})
+
+@MapperScan(value = {"com.example.mapper"})
 public class SpringbootApplication {
 
 

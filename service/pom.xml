@@ -8,11 +8,8 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <artifactId>service</artifactId>
 
-    <!-- 默认为jar -->
-    <packaging>war</packaging>
-
-    <artifactId>web</artifactId>
     <dependencies>
         <dependency>
             <groupId>com.example</groupId>
@@ -21,21 +18,9 @@
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>service</artifactId>
+            <artifactId>dao</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <!--  设定主配置类 -->
-                <configuration>
-                    <mainClass>com.example.SpringbootApplication</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>

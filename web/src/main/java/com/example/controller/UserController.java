@@ -1,17 +1,32 @@
 package com.example.controller;
 
-import com.example.User;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.example.model.UserModel;
+import com.example.srv.UserSrv;
+import com.example.vo.UserVo;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UserController {
 
-    @GetMapping("/getuser")
-    public User getUser() {
-        User user = new User();
-        user.setGender(0);
-        user.setName("XI");
-        return user;
+    @Autowired
+    private UserSrv userSrv;
+
+    @RequestMapping("/getuser")
+    public UserVo getUser(@RequestParam(name = "id") Integer id) {
+        UserModel userModel = userSrv.queryUserById(id);
+        System.out.println(userModel.toString());
+        UserVo userVo = new UserVo();
+        BeanUtils.copyProperties(userModel,userVo);
+        return userVo;
+    }
+
+
+    @RequestMapping
+    public String test(){
+        return "hello-- --";
     }
 }
