@@ -1,7 +1,7 @@
 package com.example.utils.response;
 
 public class BusinessException extends Exception implements CommonError {
-    private  CommonError commonError;
+    private CommonError commonError;
 
     public BusinessException(CommonError commonError) {
         super();

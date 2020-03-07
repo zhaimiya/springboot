@@ -1,5 +1,6 @@
 package com.example.controller;
 
+
 import com.example.model.UserModel;
 import com.example.srv.UserSrv;
 import com.example.utils.response.BusinessException;
@@ -8,10 +9,15 @@ import com.example.utils.response.EmBusinessError;
 import com.example.vo.UserVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
-public class UserController {
+public class UserController extends BaseController{
 
     @Autowired
     private UserSrv userSrv;
@@ -26,6 +32,8 @@ public class UserController {
         BeanUtils.copyProperties(userModel, userVo);
         return CommonReturnType.sendResponse(userVo);
     }
+
+
 
     @RequestMapping
     public String test() {

@@ -5,8 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication(scanBasePackages = {"com.example.mapper","com.example.controller","com.example.srv"})
-
+@SpringBootApplication(scanBasePackages = {"com.example"})
 @MapperScan(value = {"com.example.mapper"})
 public class SpringbootApplication {
 

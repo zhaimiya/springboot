@@ -1,6 +1,10 @@
-package com.example.utils.response;
+package com.example.controller;
 
+import com.example.utils.response.BusinessException;
+import com.example.utils.response.CommonReturnType;
+import com.example.utils.response.EmBusinessError;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -16,13 +20,13 @@ public class BaseController {
     @ResponseBody
     public Object handleException(HttpServletRequest request, Exception exception) {
         Map<String, Object> responseData = new HashMap<>();
-        if(exception instanceof BusinessException){
+        if (exception instanceof BusinessException) {
             BusinessException businessException = (BusinessException) exception;
             responseData.put("errCode", businessException.getErrCode());
             responseData.put("errMsg", businessException.getErrMsg());
-        }else{
+        } else {
             responseData.put("errCode", EmBusinessError.UNKNOWN_ERROR.getErrCode());
-            responseData.put("errMsg",  EmBusinessError.UNKNOWN_ERROR.getErrMsg());
+            responseData.put("errMsg", EmBusinessError.UNKNOWN_ERROR.getErrMsg());
         }
         return CommonReturnType.sendResponse("fail", responseData);
     }
