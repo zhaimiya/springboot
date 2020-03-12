@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.webmvc.controller;
 
 
 import com.example.model.UserModel;
@@ -9,12 +9,7 @@ import com.example.utils.response.EmBusinessError;
 import com.example.vo.UserVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.Map;
 
 @RestController
 public class UserController extends BaseController{

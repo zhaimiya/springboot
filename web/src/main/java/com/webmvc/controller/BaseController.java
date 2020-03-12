@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.webmvc.controller;
 
 import com.example.utils.response.BusinessException;
 import com.example.utils.response.CommonReturnType;
