@@ -1,7 +1,7 @@
-package com.webmvc.configuration;
+package com.web.configuration;
 
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan(basePackages = "com.webmvc")
+@ComponentScan(basePackages = "com.web")
 public class DispatcherServletConfig {
 }

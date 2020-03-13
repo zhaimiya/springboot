@@ -1,4 +1,4 @@
-package com.webmvc.controller;
+package com.example.controller;
 
 
 import com.example.model.UserModel;
@@ -30,8 +30,8 @@ public class UserController extends BaseController{
 
 
 
-    @RequestMapping
+    @RequestMapping("")
     public String test() {
-        return "hello-- --";
+        return "index";
     }
 }

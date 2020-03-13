@@ -1,6 +1,4 @@
-package com.example.servlet;
-
-import org.springframework.boot.web.servlet.ServletComponentScan;
+package com.servlet;
 
 import javax.servlet.AsyncContext;
 import javax.servlet.ServletException;

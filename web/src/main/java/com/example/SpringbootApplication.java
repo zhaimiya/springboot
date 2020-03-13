@@ -4,12 +4,11 @@ import com.example.config.context.FirstApplicationContextInitializer;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @SpringBootApplication(scanBasePackages = {"com.example"})
 @MapperScan(value = {"com.example.mapper"})
-@ServletComponentScan("com.example.servlet")
+@ServletComponentScan("com.servlet") // 异步非阻塞
 public class SpringbootApplication {
 
 

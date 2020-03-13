@@ -1,4 +1,4 @@
-package com.webmvc.controller;
+package com.web.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

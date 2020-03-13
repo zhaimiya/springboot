@@ -1,6 +1,6 @@
-package com.webmvc.servlet.support;
+package com.web.servlet.support;
 
-import com.webmvc.configuration.DispatcherServletConfig;
+import com.web.configuration.DispatcherServletConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class
