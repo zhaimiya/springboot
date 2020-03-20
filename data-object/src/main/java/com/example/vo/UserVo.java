@@ -1,6 +1,6 @@
 package com.example.vo;
 
-public class UserVo {
+public class UserVo  {
     private Integer id;
     private String name;
     private Boolean gender;

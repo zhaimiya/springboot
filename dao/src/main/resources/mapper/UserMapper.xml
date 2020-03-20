@@ -12,11 +12,53 @@
         ID,NAME,GENDER,PHONE
     </sql>
 
-    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer"  resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from SYS_USER
         where ID = #{id,jdbcType=INTEGER}
+    </select>
+
+    <insert id="insert" parameterType="com.example.entity.User" keyProperty="id" useGeneratedKeys="true">
+       insert into sys_user (id,name,gender,phone) values (#{id},#{name},#{gender},#{phone})
+    </insert>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from SYS_USER
+        where ID = #{id,jdbcType=INTEGER}
+    </delete>
+
+    <update id="updateByPrimaryKeySelective">
+        update sys_user
+        <set>
+            <if test="name != null">
+                NAME = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="gender != null">
+                GENDER = #{gender,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                PHONE = #{phone,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=INTEGER}
+    </update>
+
+    <select id="selectByPageNumSize" parameterType="com.example.entity.User" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from SYS_USER
+<!--        <where>-->
+<!--            <if test="name != null">-->
+<!--                NAME = #{name,jdbcType=VARCHAR},-->
+<!--            </if>-->
+<!--            <if test="gender != null">-->
+<!--                GENDER = #{gender,jdbcType=VARCHAR},-->
+<!--            </if>-->
+<!--            <if test="phone != null">-->
+<!--                PHONE = #{phone,jdbcType=VARCHAR},-->
+<!--            </if>-->
+<!--        </where>-->
     </select>
 
 </mapper>
