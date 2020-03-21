@@ -1,8 +1,9 @@
 package com.example;
 
-import com.example.controller.UserController;
-import com.example.utils.response.CommonReturnType;
-import com.example.vo.UserVo;
+import com.dataobject.utils.response.CommonReturnType;
+import com.dataobject.vo.UserVo;
+import com.SpringbootApplication;
+import com.web.controller.UserController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +14,7 @@ class SpringbootApplicationTests {
 
 
 
-	@Autowired
+	@Autowired(required = false)
 	private UserController userController;
 
 	@Test
@@ -46,7 +47,10 @@ class SpringbootApplicationTests {
 
 	@Test
 	public void pageUser(){
-		CommonReturnType type= userController.pageUser(new UserVo(),4,1);
+		UserVo userVo = new UserVo();
+		userVo.setName("xi");
+		userVo.setPhone("18888888888");
+		CommonReturnType type= userController.pageUser(userVo,4,1);
 		if(null != type&&null!=type.getData()){
 			System.out.println(type.getData());
 			System.err.println(type.getData());
