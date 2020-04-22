@@ -1,8 +1,8 @@
 # Initializers
 org.springframework.context.ApplicationContextInitializer=\
-com.example.config.context.SecondApplicationContextInitializer
+com.web.config.context.SecondApplicationContextInitializer
 
 # Application Listeners
 org.springframework.context.ApplicationListener=\
-com.example.config.listener.FirstApplicationListener,\
-com.example.config.listener.SecondApplicationListener
+com.web.config.listener.FirstApplicationListener,\
+com.web.config.listener.SecondApplicationListener
