@@ -1,11 +1,13 @@
 package com.example.springbootrest.config;
 
 import com.example.springbootrest.utils.PropertiesHandlerMethodArgumentResolver;
+import com.example.springbootrest.utils.PropertiesHandlerMethodReturnValueHandler;
 import com.example.springbootrest.utils.PropertiesHttpMsgConvert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
+import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
 
@@ -30,6 +32,13 @@ public class RestWebMvcConfig implements WebMvcConfigurer {
         curResolvers.addAll(resolvers);
         // 重新设置Resolver集合
         requestMappingHandlerAdapter.setArgumentResolvers(curResolvers);
+
+        List<HandlerMethodReturnValueHandler> handlers = requestMappingHandlerAdapter.getReturnValueHandlers();
+
+        List<HandlerMethodReturnValueHandler> curHandlers = new ArrayList<>(handlers.size()+1);
+        curHandlers.add(new PropertiesHandlerMethodReturnValueHandler());
+        curHandlers.addAll(handlers);
+        requestMappingHandlerAdapter.setReturnValueHandlers(curHandlers);
 
     }
 

@@ -1,4 +1,4 @@
-package com.web.config;
+package com.web.config.runner;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.Ordered;

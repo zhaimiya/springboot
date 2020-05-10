@@ -1,4 +1,4 @@
-package com.web.config;
+package com.web.config.runner;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;

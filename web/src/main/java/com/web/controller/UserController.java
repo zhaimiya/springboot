@@ -25,7 +25,7 @@ public class UserController extends BaseController {
     private UserSrv userSrv;
 
     @RequestMapping("/getuser")
-    public CommonReturnType getUser(@RequestParam(name = "id") Integer id) throws BusinessException {
+    public CommonReturnType getUser(@RequestParam(required = false,name = "id",defaultValue="11") Integer id) throws BusinessException {
         UserModel userModel = userSrv.queryUserById(id);
         if (null == userModel)
             throw new BusinessException(EmBusinessError.USER_NOT_EXIST);

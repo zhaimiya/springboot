@@ -1,11 +1,13 @@
 package com.example.springbootrest.controller;
 
 import com.example.springbootrest.domain.User;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Properties;
 
-@RestController
+//@RestController
+@Controller
 @RequestMapping("/rest")
 public class HelloController {
 
